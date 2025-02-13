@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Course Resources - Lincoln Hub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white custom-nav">
+        <div class="container">
+            <div>
+                <a href="#" class="text-decoration-none text-gray-600 me-3">
+                    <i class="fas fa-arrow-left me-2"></i>Back
+                </a>
+                <a class="navbar-brand fw-bold text-gray-800">Course Resources</a>
+            </div>
+            <div class="d-flex align-items-center">
+
+                <span class="text-gray-600 me-3">Welcome, Victor</span>
+                <a href="#" class="btn btn-danger">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="content-wrapper">
+        <div class="container py-4">
+            <!-- Upload Form -->
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="card-title mb-4">Upload New Resource</h2>
+                    <form method="POST" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Course</label>
+                                <select class="form-select" name="course_id" required>
+                                    <option value="106">CSE101 - Programming Fundamentals</option>
+                                    <option value="108">CSE103 - Mathematics for Computing</option>
+                                    <option value="109">CSE104 - Digital Logic Design</option>
+                                    <option value="111">CSE106 - Web Development Basics</option>
+                                    <option value="115">CSE203 - Operating Systems</option>
+                                    <option value="122">CSE303 - Cloud Computing</option>
+                                    <option value="128">CSE402 - Machine Learning</option>
+                                    <option value="130">CSE404 - Blockchain Technology</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Title</label>
+                                <input type="text" class="form-control" name="title" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Description</label>
+                            <textarea class="form-control" name="description"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">File</label>
+                            <input type="file" class="form-control" name="resource_file" required>
+                            <small class="form-text text-muted">
+                                Allowed file types: PDF, DOC, DOCX, XLS, XLSX, JPG, JPEG, PNG, GIF, MP4, FIG, ZIP, RAR
+                            </small>
+                        </div>
+                        <button type="submit" name="upload" class="btn btn-primary">Upload Resource</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Resources Grid -->
+            <div class="masonry-grid">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h3 class="card-title">my database</h3>
+                            <div class="d-flex">
+                                <a href="#" download class="text-primary me-2">
+                                    <i class="fas fa-download"></i>
+                                </a>
+                                <form method="POST" class="d-inline">
+                                    <input type="hidden" name="resource_id" value="3">
+                                    <button type="submit" name="delete_resource" class="btn btn-link text-danger p-0"
+                                        onclick="return confirm('Are you sure you want to delete this resource?')">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <p class="card-text text-muted mb-2">hii</p>
+                        <div class="d-flex justify-content-between text-muted small">
+                            <span class="badge bg-secondary">CSE203</span>
+                            <span>Feb 03, 2025</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h3 class="card-title">My git</h3>
+                            <div class="d-flex">
+                                <a href="#" download class="text-primary me-2">
+                                    <i class="fas fa-download"></i>
+                                </a>
+                                <form method="POST" class="d-inline">
+                                    <input type="hidden" name="resource_id" value="2">
+                                    <button type="submit" name="delete_resource" class="btn btn-link text-danger p-0"
+                                        onclick="return confirm('Are you sure you want to delete this resource?')">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <p class="card-text text-muted mb-2">first upload</p>
+                        <div class="d-flex justify-content-between text-muted small">
+                            <span class="badge bg-secondary">CSE203</span>
+                            <span>Feb 03, 2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white shadow-sm mt-auto py-3">
+        <div class="container text-center">
+            <p class="text-muted mb-0">© 2025 Lincoln Hub - Course Resources</p>
+        </div>
+    </footer>
+
+    <script src="./script/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
